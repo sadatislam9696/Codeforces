@@ -1,4 +1,4 @@
-/***   Bismillahir Rahmanir Rahim   ***/
+ /***   Bismillahir Rahmanir Rahim   ***/
 
 #include<bits/stdc++.h>
 using namespace std;
