@@ -45,15 +45,18 @@ void solution(){
 
         int a = i - 1, b = (n - i) + 1;
         if((c[i + 1] - c[i]) == 1){
-            ll x = (1LL * a * b) + (b - 1);
-            cnt[x]++;
+            ll seg = (1LL * a * b) + (b - 1);
+            int points = 1;
+            cnt[seg] += points;
         }
         else{
-            ll x = (1LL * a * b) + (b - 1);
-            cnt[x]++;
-            ll y = (1LL * (a + 1) * (b - 1));
-            ll seg = 1LL * ((c[i + 1] - 1) - (c[i] + 1)) + 1;
-            cnt[y] += seg;
+            ll seg = (1LL * a * b) + (b - 1);
+            int points = 1;
+            cnt[seg] += points;
+
+            ll seg1 = (1LL * (a + 1) * (b - 1));
+            ll points1 = 1LL * ((c[i + 1] - 1) - (c[i] + 1)) + 1;
+            cnt[seg1] += points1;
         }
     }
 
