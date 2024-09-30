@@ -40,7 +40,7 @@ void solution(){
         cin >> k[i];
     }
 
-    map<ll, ll>cnt, def;
+    map<ll, ll>cnt;
     for(int i = 1; i <= n; i++){
 
         int a = i - 1, b = (n - i) + 1;
@@ -53,15 +53,15 @@ void solution(){
             cnt[x]++;
             ll y = (1LL * (a + 1) * (b - 1));
             ll seg = 1LL * ((c[i + 1] - 1) - (c[i] + 1)) + 1;
-            def[y] += seg;
+            cnt[y] += seg;
         }
     }
 
     for(int i = 1; i <= q; i++){
-        cout << cnt[k[i]] + def[k[i]] << " ";
+        cout << cnt[k[i]] << " ";
     }
     cout << nn;
-    cnt.clear();def.clear();
+    cnt.clear();
 }
 int32_t main()
 {
