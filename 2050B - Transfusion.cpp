@@ -28,30 +28,25 @@ const int N = 1e3 + 9;
 void solution(){
    int n; 
    cin >> n; 
-   int a[n + 1];
-   ll sum = 0;
+   ll sum1 = 0, sum2 = 0, tot = 0;
    for(int i = 1; i <= n; i++){
-      cin >> a[i];
-      sum += a[i];
+      int x; cin >> x; 
+      tot += x;
+      if(i & 1)sum1 += x;
+      else sum2 += x;
    }
 
-   ll x = sum / n;
-   if((1LL * x * n) == sum){
-      sum = 0;
-      ll sum1 = 0;
-      for(int i = 1; i <= n; i++){
-         if(i & 1) sum += a[i];
-         else sum1 += a[i];
-      }
+   ll x = tot / n;
+   if((1LL * x * n) == tot){
       int odd = n / 2, even = n / 2;
       if(n & 1)odd++;
 
-      if((1LL * even * x == sum1) and (1LL * odd * x == sum)){
+      if((1LL * even * x == sum2) and (1LL * odd * x == sum1)){
          cout << "YES" << nn;
+         return;
       }
-      else cout << "NO" << nn;
    }
-   else cout << "NO" << nn;
+   cout << "NO" << nn;
 }
 int32_t main(){
 
